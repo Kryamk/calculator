@@ -97,6 +97,7 @@ h1 {
 	border-top: 1px solid #181818;
 	padding-top: 10px;
 	margin-bottom: 57px;
+	gap: 10px;
 }
 /*=========================================================================================*/
 /*=========================================================================================*/
@@ -180,6 +181,8 @@ h1 {
 /* Input radio */
 .calcform-radios {
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 20px;
 }
 .calcform-group-owner .calcform-radios {
 	margin-bottom: 18px;
@@ -278,7 +281,9 @@ h1 {
 
 
 /* Custom select */
-.calcform-select {}
+.calcform-select {
+	max-width: 650px;
+}
 .calcform-select-title {
 	color: var(--black, #181818);
 	font-family: Jost;
@@ -424,6 +429,8 @@ h1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 15px;
 	background: #F8F8F8;
 	padding: 15px 40px 15px 20px;
 	margin: 50px 0;
@@ -494,4 +501,83 @@ h1 {
 	letter-spacing: -0.5px;
 	cursor: pointer;
 	margin-top: 47px;
+}
+
+@media (max-width: 1024px) {
+	h1 {
+		font-size: 50px;
+	}
+	.calcform-group {
+		gap: 30px 20px;
+	}
+	.calcform-group-owner {
+		margin-bottom: 40px;
+	}
+	.calcform-radios {
+		grid-column: span 2;
+	}
+	.calcform-group-auto {
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 50px;
+	}
+	.calcform-group-drivers {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.calcform-answer-sum__num,
+	.calcform-answer-sum__sign {
+		font-size: 50px;
+	}
+	.calcform-callback {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px 20px;
+	}
+		.callback-btn {
+			margin-top: 0;
+		}
+
+}
+@media (max-width: 767px) {
+	h1 {
+		font-size: 28px;
+	}
+	.calcform-group-owner {
+		grid-template-columns: 1fr;
+		margin-bottom: 20px;
+	}
+	.calcform-radios {
+		grid-column: 1;
+	}
+	.calcform-answer {
+		padding: 15px;
+		margin: 20px 0 40px;
+	}
+	.calcform-answer-sum__num,
+	.calcform-answer-sum__sign {
+		font-size: 28px;
+	}
+	.calcform-answer-text {
+		width: 100%;
+		order: 1;
+	}
+	.calcform-group-btn {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 576px) {
+	.calcform-group-auto {
+		margin-bottom: 30px;
+	}
+		.calcform-group-auto .calcform-select {
+			grid-column: span 2;
+		}
+	.calcform-group-drivers {
+		grid-template-columns: 1fr;
+	}
+	.calcform-group-btn {
+		grid-template-columns: 1fr;
+	}
+	.calcform-callback {
+		grid-template-columns: 1fr;
+	}
+
 }
