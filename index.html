@@ -34,7 +34,7 @@
 					<div class="calcform-select">
 						<div class="calcform-select-title">Место регистрации</div>
 						<div class="calcform-address">
-							<input class="calcform-address__input" name="city" type="text" value="" placeholder="Москва">
+							<input class="calcform-address__input" name="city" type="text" value="Москва" placeholder="Москва">
 						</div>
 					</div>
 
@@ -57,7 +57,7 @@
 						<div class="calcform-select-title">Категория ТС</div>
 						<div class="my-select">
 							<div class="my-select-header">
-								<input type="hidden" class="my-select-header__selected" value="Легковые автомобили">
+								<input type="hidden" id="autoCategory" class="my-select-header__selected" value="Легковые автомобили">
 								<p class="my-select-header__option">Легковые автомобили</p>
 								<svg class="my-select-header__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.63394L2.15337 6L10.0767 11.5929L18 6L19.1534 7.63394L10.0767 14.041L1 7.63394Z" fill="black" />
@@ -107,7 +107,7 @@
 						<div class="calcform-select-title">Период использования</div>
 						<div class="my-select">
 							<div class="my-select-header">
-								<input type="hidden" class="my-select-header__selected" value="10 месяцев и более">
+								<input type="hidden" id="autoPeriod" class="my-select-header__selected" value="10 месяцев и более">
 								<p class="my-select-header__option">10 месяцев и более</p>
 								<svg class="my-select-header__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.63394L2.15337 6L10.0767 11.5929L18 6L19.1534 7.63394L10.0767 14.041L1 7.63394Z" fill="black" />
@@ -145,42 +145,113 @@
 
 					<div class="calcform-field">
 						<div class="calcform-field-title">Мощность, л.с</div>
-						<input class="calcform-field-input" type="text" placeholder="Введите значение">
+						<input class="calcform-field-input" id="autoPowerL" type="number" value="10" placeholder="Введите значение">
 					</div>
 
 					<div class="calcform-field">
 						<div class="calcform-field-title">Мощность, кВт</div>
-						<input class="calcform-field-input" type="text" placeholder="Введите значение">
+						<input class="calcform-field-input" id="autoPowerW" type="number" value="10" placeholder="Введите значение">
 					</div>
 
 				</div>
 
 				<div class="calcform-group-title">Водители</div>
-				<div class="calcform-group calcform-group-drivers-check">
+				<div class="calcform-group calcform-group-drivers-check" data-owner="owner-1">
 					<div class="calcform-radios">
 						<div class="calcform-radio">
-							<input class="calcform-radio__input" id="drive-1" name="face" type="radio" checked>
-							<label class="calcform-radio__label" for="drive-1">По списку</label>
+							<input class="calcform-radio__input" id="driver-1" name="driver" type="radio" checked>
+							<label class="calcform-radio__label" for="driver-1">По списку</label>
 						</div>
 						<div class="calcform-radio">
-							<input class="calcform-radio__input" id="drive-2" name="face" type="radio">
-							<label class="calcform-radio__label" for="drive-2">Без ограничений</label>
+							<input class="calcform-radio__input" id="driver-2" name="driver" type="radio">
+							<label class="calcform-radio__label" for="driver-2">Без ограничений</label>
 						</div>
 					</div>
 				</div>
 
 
-				<div class="calcform-group calcform-group-drivers">
+				<div class="calcform-group calcform-group-drivers" data-owner="owner-1" data-driver="driver-1">
 					<div class="calcform-field">
 						<div class="calcform-field-title">Возраст, лет</div>
-						<input class="calcform-field-input" type="text" placeholder="Введите значение">
+						<input class="calcform-field-input js-age"  type="number" value="10" placeholder="Введите значение">
 					</div>
 					<div class="calcform-field">
 						<div class="calcform-field-title">Стаж, лет</div>
-						<input class="calcform-field-input" type="text" placeholder="Введите значение">
+						<input class="calcform-field-input js-exp"  type="number" value="10" placeholder="Введите значение">
 					</div>
 					<div class="calcform-select">
 						<div class="calcform-select-title">Сколько лет без ДТП</div>
+						<div class="my-select">
+							<div class="my-select-header">
+								<input type="hidden" class="my-select-header__selected js-dtp" value="10 лет и более - Кбм 0.46">
+								<p class="my-select-header__option">10 лет и более - Кбм 0.46</p>
+								<svg class="my-select-header__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.63394L2.15337 6L10.0767 11.5929L18 6L19.1534 7.63394L10.0767 14.041L1 7.63394Z" fill="black" />
+								</svg>
+							</div>
+							<div class="my-select-dropdown">
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="10 лет и более - Кбм 0.46да">10 лет и более - Кбм 0.46</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="9 лет - Кбм 0.52овец">9 лет - Кбм 0.52</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="8 лет - Кбм 0.57">8 лет - Кбм 0.57</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="7 лет - Кбм 0.63">7 лет - Кбм 0.63</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="6 лет - Кбм 0.68">6 лет - Кбм 0.68</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="5 лет - Кбм 0.74">5 лет - Кбм 0.74</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="4 года - Кбм 0.78">4 года - Кбм 0.78</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="3 года - Кбм 0.83">3 года - Кбм 0.83</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="2 года - Кбм 0.91">2 года - Кбм 0.91</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="1 год - Кбм 1.00">1 год - Кбм 1.00</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="Страхуюсь впервые - Кбм 1.17">Страхуюсь впервые - Кбм 1.17</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="Был в ДТП менее года назад - Кбм 1.76">Был в ДТП менее года назад - Кбм 1.76</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="Был в нескольких ДТП - Кбм 2.25">Был в нескольких ДТП - Кбм 2.25</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="Был в нескольких ДТП - Кбм 2.94">Был в нескольких ДТП - Кбм 2.94</a>
+								</div>
+								<div class="my-select-dropdown__item">
+									<a class="my-select-dropdown__option" href="#" data-select="Был в нескольких ДТП - Кбм 3.92">Был в нескольких ДТП - Кбм 3.92</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="remove-driver hidden" type="button">
+						<span class="remove-driver__icon"></span>
+						<span class="remove-driver__text">Удалить водителя</span>
+					</button>
+
+				</div>
+				<button class="add-driver" type="button" data-owner="owner-1" data-driver="driver-1">
+					<span class="add-driver__icon"></span>
+					<span class="add-driver__text">Добавить еще водителя</span>
+				</button>
+
+				<div class="calcform-group calcform-group-drivers hidden" data-owner="owner-2">
+					<div class="calcform-select">
+						<div class="calcform-select-title">Сколько лет ездите без ДТП по своей вине?</div>
 						<div class="my-select">
 							<div class="my-select-header">
 								<input type="hidden" class="my-select-header__selected" value="10 лет и более - Кбм 0.46">
@@ -240,15 +311,13 @@
 					</div>
 
 				</div>
-				<button class="add-driver" type="button">
-					<span class="add-driver__icon"></span>
-					<span class="add-driver__text">Добавить еще водителя</span>
-				</button>
+
 				<div class="calcform-group calcform-group-btn">
-					<button class="calculate-btn">Рассчитать стоимость</button>
+					<span class="error-note">Заполните обязательные поля</span>
+					<button type="button" class="calculate-btn">Рассчитать стоимость</button>
 				</div>
 
-				<div class="calcform-answer">
+				<div class="calcform-answer hidden">
 					<div class="calcform-answer-text">Окончательную стоимость полиса вы можете уточнить при обращении к представителю страховой компании. Рассчет произведен на основе указанных вами параметров.</div>
 					<div class="calcform-answer-sum">
 						<span class="calcform-answer-sum__text">от</span>
@@ -258,7 +327,7 @@
 				</div>
 			</form>
 
-			<div class="calcform-callback">
+			<div class="calcform-callback hidden">
 				<div class="calcform-field">
 					<div class="calcform-field-title">Ваше имя</div>
 					<input class="calcform-field-input" type="text" placeholder="Ваше имя">
@@ -278,10 +347,6 @@
 
 		</div>
 	</section>
-
-
-
-
 
 
 
