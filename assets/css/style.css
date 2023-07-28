@@ -113,10 +113,10 @@ h1 {
 	appearance: textfield;
 }
 
-.calcform input[type="number"]::-webkit-outer-spin-button,
+/* .calcform input[type="number"]::-webkit-outer-spin-button,
 .calcform input[type="number"]::-webkit-inner-spin-button {
 	display: none;
-}
+} */
 .calcform {}
 .calcform-group-title {
 	color: var(--black, #181818);
@@ -255,9 +255,9 @@ h1 {
 	outline: none;
 	padding: 25px;
 }
-#kladr_autocomplete>ul>li:first-child {
+/* #kladr_autocomplete>ul>li:first-child {
 	display: none;
-}
+} */
 #kladr_autocomplete ul {
 	box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.2);
 	background: white;
@@ -269,8 +269,8 @@ h1 {
 	border-bottom: 1px solid rgba(193, 193, 193, .3);
 }
 #kladr_autocomplete li:hover {
-	background-color: #f2f2f2;
-	cursor: pointer
+	background-color: #ebebeb;
+	cursor: pointer;
 }
 #kladr_autocomplete li.active {
 	background-color: #e9e9e9
@@ -358,12 +358,12 @@ h1 {
 	visibility: visible;
 }
 .my-select-dropdown__item {
-	background: #F8F8F8;
-	padding: 10px 25px;
 	border-bottom: 1px solid rgba(193, 193, 193, .3);
 }
 .my-select-dropdown__option {
-	display: inline-block;
+	display: block;
+	padding: 10px 25px;
+	background: #F8F8F8;
 	color: var(--black, #181818);
 	font-family: EuclidFlex;
 	font-size: 16px;
@@ -372,7 +372,9 @@ h1 {
 	line-height: 120%;
 	text-decoration: none;
 }
-
+.my-select-dropdown__option:hover {
+	background-color: #ebebeb
+}
 
 .add-driver {
 	width: max-content;
@@ -482,6 +484,11 @@ h1 {
 	letter-spacing: -0.5px;
 	cursor: pointer;
 	margin-top: 47px;
+	transition: transform .3s ease, box-shadow 3s ease;
+}
+.calculate-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 35px rgba(0, 0, 0, .125);
 }
 .error-note {
 	position: absolute;
@@ -578,6 +585,11 @@ h1 {
 	letter-spacing: -0.5px;
 	cursor: pointer;
 	margin-top: 47px;
+	transition: transform .3s ease, box-shadow 3s ease;
+}
+.callback-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 35px rgba(0, 0, 0, .125);
 }
 
 @media (max-width: 1024px) {

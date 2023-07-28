@@ -34,7 +34,7 @@
 					<div class="calcform-select">
 						<div class="calcform-select-title">Место регистрации</div>
 						<div class="calcform-address">
-							<input class="calcform-address__input" name="city" type="text" value="Москва" placeholder="Москва">
+							<input class="calcform-address__input" name="city" type="text" value="Москва" placeholder="Город">
 						</div>
 					</div>
 
@@ -145,12 +145,12 @@
 
 					<div class="calcform-field">
 						<div class="calcform-field-title">Мощность, л.с</div>
-						<input class="calcform-field-input" id="autoPowerL" type="number" placeholder="Введите значение">
+						<input  class="calcform-field-input" id="autoPowerL" type="text" placeholder="Введите значение">
 					</div>
 
 					<div class="calcform-field">
 						<div class="calcform-field-title">Мощность, кВт</div>
-						<input class="calcform-field-input" id="autoPowerW" type="number" placeholder="Введите значение">
+						<input  class="calcform-field-input" id="autoPowerW" type="text" placeholder="Введите значение">
 					</div>
 
 				</div>
@@ -173,11 +173,11 @@
 				<div class="calcform-group calcform-group-drivers" data-owner="owner-1" data-driver="driver-1">
 					<div class="calcform-field">
 						<div class="calcform-field-title">Возраст, лет</div>
-						<input class="calcform-field-input js-age"  type="number" placeholder="Введите значение">
+						<input  class="calcform-field-input js-input-number js-age"  type="text" placeholder="Введите значение">
 					</div>
 					<div class="calcform-field">
 						<div class="calcform-field-title">Стаж, лет</div>
-						<input class="calcform-field-input js-exp"  type="number" placeholder="Введите значение">
+						<input  class="calcform-field-input js-input-number js-exp"  type="text" placeholder="Введите значение">
 					</div>
 					<div class="calcform-select">
 						<div class="calcform-select-title">Сколько лет без ДТП</div>
@@ -254,7 +254,7 @@
 						<div class="calcform-select-title">Сколько лет ездите без ДТП по своей вине?</div>
 						<div class="my-select">
 							<div class="my-select-header">
-								<input type="hidden" class="my-select-header__selected" value="10 лет и более - Кбм 0.46">
+								<input type="hidden" class="my-select-header__selected js-dtp" value="10 лет и более - Кбм 0.46">
 								<p class="my-select-header__option">10 лет и более - Кбм 0.46</p>
 								<svg class="my-select-header__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.63394L2.15337 6L10.0767 11.5929L18 6L19.1534 7.63394L10.0767 14.041L1 7.63394Z" fill="black" />
@@ -344,6 +344,7 @@
 					<button class="callback-btn">Отправить заявку</button>
 				</div>
 			</div>
+			<div class="result-text"></div>
 
 		</div>
 	</section>
